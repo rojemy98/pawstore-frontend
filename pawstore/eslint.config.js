@@ -1,21 +1,27 @@
-import js from '@eslint/js'
-import globals from 'globals'
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
-import { defineConfig, globalIgnores } from 'eslint/config'
+import globals from 'globals';
+import pluginJs from '@eslint/js';
+import tseslint from 'typescript-eslint';
+import pluginReact from 'eslint-plugin-react';
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'; // Importamos el plugin de Prettier
 
-export default defineConfig([
-  globalIgnores(['dist']),
+/** @type {import('eslint').Linter.Config[]} */
+export default [
+  { files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'] },
+  { languageOptions: { globals: globals.browser } },
+  pluginJs.configs.recommended,
+  ...tseslint.configs.recommended,
+  pluginReact.configs.flat.recommended,
+  eslintPluginPrettierRecommended, // Agregamos esta línea
   {
-    files: ['**/*.{js,jsx}'],
-    extends: [
-      js.configs.recommended,
-      reactHooks.configs.flat.recommended,
-      reactRefresh.configs.vite,
-    ],
-    languageOptions: {
-      globals: globals.browser,
-      parserOptions: { ecmaFeatures: { jsx: true } },
+    rules: {
+      'react/react-in-jsx-scope': 'off',
     },
   },
-])
+  {
+    settings: {
+      react: {
+        version: 'detect',
+      },
+    },
+  },
+];

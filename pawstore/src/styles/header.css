@@ -1,0 +1,41 @@
+/* ==============================
+   HEADER
+================================= */
+
+header {
+    background-color: #254b3a;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 5%;
+}
+
+/* STORE NAME */
+
+header h1 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* NAVIGATION */
+
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+/* NAVIGATION LINKS */
+
+header nav a {
+    color: white;
+    font-size: 16px;
+    transition: color 0.2s ease;
+}
+
+header nav a:hover {
+    color: #b9d8c4;
+}

@@ -1,0 +1,33 @@
+/* ==============================
+   FOOTER
+================================= */
+
+footer {
+    background-color: #254b3a;
+    color: white;
+
+    padding: 25px 5%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    text-align: center;
+}
+
+/* SOCIAL LINKS */
+
+footer div {
+    display: flex;
+    gap: 20px;
+}
+
+footer a {
+    color: #d1e5d7;
+    transition: color 0.2s ease;
+}
+
+footer a:hover {
+    color: white;
+}
