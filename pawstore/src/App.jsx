@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 
 import Home from './pages/Home';
 import ProductList from './pages/ProductList';
+import ProductDetail from './pages/ProductDetail';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -34,8 +35,11 @@ function App() {
           <ProductList onViewDetails={handleViewDetails} />
         )}
 
-        {currentPage === 'detail' && (
-          <h2>Detalle de: {selectedProduct?.nombre}</h2>
+        {currentPage === 'detail' && selectedProduct && (
+          <ProductDetail
+            product={selectedProduct}
+            onNavigate={handleNavigation}
+          />
         )}
       </main>
 
