@@ -4,6 +4,8 @@ import { useState } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
+import Home from "./pages/Home";
+
 function App() {
 
   // Stores the current page
@@ -21,7 +23,7 @@ function App() {
       <main>
 
         {currentPage === "home" && (
-          <h2>Bienvenido a PawStore</h2>
+          <Home onNavigate={handleNavigation} />
         )}
 
         {currentPage === "products" && (

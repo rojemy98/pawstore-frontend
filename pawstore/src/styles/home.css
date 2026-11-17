@@ -1,0 +1,50 @@
+/* ==============================
+   HOME PAGE
+================================= */
+
+.home {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 20px;
+}
+
+/* MAIN TITLE */
+
+.home h2 {
+    color: #254b3a;
+    font-size: 32px;
+}
+
+/* DESCRIPTION */
+
+.home p {
+    color: #555555;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+/* PRODUCTS BUTTON */
+
+.home button {
+    background-color: #254b3a;
+    color: white;
+
+    border: none;
+    border-radius: 6px;
+
+    padding: 12px 25px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    transition: background-color 0.2s ease;
+}
+
+.home button:hover {
+    background-color: #35684e;
+}
