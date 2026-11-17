@@ -1,16 +1,113 @@
-# React + Vite
+# PawStore 🐾
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web desarrollada con React y Vite para una veterinaria y tienda en línea de productos para mascotas.
 
-Currently, two official plugins are available:
+## Descripción
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+PawStore permite visualizar un catálogo de productos para mascotas y consultar los detalles de cada producto.
 
-## React Compiler
+La aplicación cuenta con tres vistas principales:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Inicio:** presentación de la tienda.
+- **Catálogo:** visualización de los productos disponibles.
+- **Detalle de producto:** información individual del producto seleccionado.
 
-## Expanding the ESLint configuration
+Los datos del catálogo provienen exclusivamente del archivo JSON oficial proporcionado para el proyecto.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tecnologías utilizadas
+
+- React
+- JavaScript
+- JSX
+- Vite
+- HTML5
+- CSS3
+
+## Estructura del proyecto
+
+```text
+src/
+├── components/
+│   ├── Header.jsx
+│   ├── Footer.jsx
+│   └── ProductCard.jsx
+│
+├── pages/
+│   ├── Home.jsx
+│   ├── ProductList.jsx
+│   └── ProductDetail.jsx
+│
+├── data/
+│   └── products.json
+│
+├── styles/
+│
+├── App.jsx
+├── main.jsx
+└── index.css
+```
+
+## Requisitos previos
+
+Para ejecutar el proyecto necesitas:
+
+- Node.js
+- npm
+
+## Instalación
+
+1. Clonar el repositorio:
+
+```bash
+git clone URL_DEL_REPOSITORIO
+```
+
+2. Ingresar a la carpeta:
+
+```bash
+cd pawstore
+```
+
+3. Instalar las dependencias:
+
+```bash
+npm install
+```
+
+4. Ejecutar el servidor de desarrollo:
+
+```bash
+npm run dev
+```
+
+5. Abrir en el navegador la dirección proporcionada por Vite, normalmente:
+
+```text
+http://localhost:5173
+```
+
+## Compilación para producción
+
+Para generar la versión de producción:
+
+```bash
+npm run build
+```
+
+Para visualizar localmente la versión compilada:
+
+```bash
+npm run preview
+```
+
+## Funcionalidades
+
+- Navegación entre las vistas sin recargar la página.
+- Componentes funcionales reutilizables.
+- Catálogo generado dinámicamente mediante los datos del archivo JSON.
+- Visualización del detalle del producto seleccionado.
+- Diseño adaptable a diferentes tamaños de pantalla.
+
+## Alcance
+
+Esta versión no incluye autenticación, conexión con backend, administración de productos, carrito de compras ni proceso de checkout.
