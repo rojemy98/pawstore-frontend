@@ -1,19 +1,26 @@
+import { useState } from 'react';
 
-import { useState } from "react";
+import Header from './components/Header';
+import Footer from './components/Footer';
 
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-
-import Home from "./pages/Home";
+import Home from './pages/Home';
+import ProductList from './pages/ProductList';
 
 function App() {
+  const [currentPage, setCurrentPage] = useState('home');
 
-  // Stores the current page
-  const [currentPage, setCurrentPage] = useState("home");
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
-  // Changes the current page
   function handleNavigation(page) {
     setCurrentPage(page);
+
+    setSelectedProduct(null);
+  }
+
+  function handleViewDetails(product) {
+    setSelectedProduct(product);
+
+    setCurrentPage('detail');
   }
 
   return (
@@ -21,15 +28,15 @@ function App() {
       <Header onNavigate={handleNavigation} />
 
       <main>
+        {currentPage === 'home' && <Home onNavigate={handleNavigation} />}
 
-        {currentPage === "home" && (
-          <Home onNavigate={handleNavigation} />
+        {currentPage === 'products' && (
+          <ProductList onViewDetails={handleViewDetails} />
         )}
 
-        {currentPage === "products" && (
-          <h2>Catálogo de productos</h2>
+        {currentPage === 'detail' && (
+          <h2>Detalle de: {selectedProduct?.nombre}</h2>
         )}
-
       </main>
 
       <Footer />
