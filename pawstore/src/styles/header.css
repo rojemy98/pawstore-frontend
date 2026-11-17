@@ -28,14 +28,22 @@ header nav {
     gap: 25px;
 }
 
-/* NAVIGATION LINKS */
+/* NAVIGATION BUTTONS */
 
+header nav button,
 header nav a {
+    background: none;
+    border: none;
+
     color: white;
     font-size: 16px;
+    font-family: inherit;
+
+    cursor: pointer;
     transition: color 0.2s ease;
 }
 
+header nav button:hover,
 header nav a:hover {
     color: #b9d8c4;
 }

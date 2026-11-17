@@ -1,14 +1,23 @@
+
 import "../styles/header.css";
 
-function Header() {
+function Header({ onNavigate }) {
   return (
     <header>
       <h1>PawStore</h1>
 
       <nav>
-        <a href="#">Inicio</a>
-        <a href="#">Productos</a>
-        <a href="#">Contacto</a>
+        <button onClick={() => onNavigate("home")}>
+          Inicio
+        </button>
+
+        <button onClick={() => onNavigate("products")}>
+          Productos
+        </button>
+
+        <a href="#contacto">
+          Contacto
+        </a>
       </nav>
     </header>
   );
