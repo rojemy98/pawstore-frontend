@@ -111,3 +111,5 @@ npm run preview
 ## Alcance
 
 Esta versión no incluye autenticación, conexión con backend, administración de productos, carrito de compras ni proceso de checkout.
+
+Rojemy E.
